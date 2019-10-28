@@ -1,0 +1,16 @@
+def repeatedString(s, n):
+    #n is length of string
+    #s is the substring
+    #s,n will make up a new string with length of n by repeating s for needed times
+    #after new string is created, find number of times that letter appears
+    len_s=len(s)
+    repeat_whole=n//len_s
+    remain=n%len_s
+    res=0
+    if (len_s == 1) & (s == 'a'): return n
+    if (len_s == 1) & (s != 'a'): return 0
+    if len_s > 1:
+        res=s.count('a')*repeat_whole
+        if remain != 0:
+            res += s[0:remain].count('a')
+    return res
