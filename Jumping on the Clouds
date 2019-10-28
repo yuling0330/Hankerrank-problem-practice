@@ -1,0 +1,13 @@
+def jumpingOnClouds(c):
+    start = 0
+    end = len(c)-1
+    res = 0
+    while start < end:
+        # Not possible to make a jump of size 2
+        if start + 2 > end or c[start + 2] == 1: 
+            start+=1
+            res+=1
+        else:
+            start+=2
+            res+=1
+    return(res)
